@@ -1,13 +1,7 @@
 //Tela inicial
 //adicionando função de alterar página
+let irTelaCadastro = document.getElementById('button-cadastrados')
 
-let alunosCadastrados = document.getElementById('button-cadastrados')
-let cadastrar = document.getElementById('button-cadastrar')
-
-alunosCadastrados.addEventListener('click', () => {
-    window.location.href = 'alunosCadastrados.html'
-})
-
-cadastrar.addEventListener('click', () => {
-    window.location.href = 'cadastrarAluno.html'
+irTelaCadastro.addEventListener('click', () => {
+    window.location.href = 'cadastro.html'
 })

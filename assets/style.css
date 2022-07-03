@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
-    text-align: center;
-    height: 100vh;
+    height: 95vh;
     width: 100vw;
 }
 
@@ -36,6 +39,15 @@ header{
     width: 20rem;
     background-color: lightgray;
     border-radius: 21px 5px;
+    padding: 1rem;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0.5rem;
 }
 
 @media(max-width: 665px) {
