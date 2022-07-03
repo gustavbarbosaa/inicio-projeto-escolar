@@ -27,16 +27,15 @@ body{
     width: 100%;
 }
 
-.cadastrados{
+#cadastrados{
     position: absolute;
     top: 25%;
     width: 70%;
     height: 70%;
     background-color: rgb(227, 245, 239);
     border-radius: 5px 21px;
-    padding: 2rem;}
-
-
+    padding: 2rem;
+}
 
 .cadastrados td{
     padding: 2px 10px;
@@ -98,6 +97,39 @@ body{
     left: 50%;
     transform: translate(-50%);
     cursor: pointer;
+}
+
+.alunosCadastrados{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.alunosCadastrados div{
+    display: flex;
+    align-items: center;
+}
+
+.alunosCadastrados div p{
+    margin: 10px;
+}
+
+.alunosCadastrados button{
+    width: 4rem;
+    height: 2rem;
+    margin: 2px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(147, 199, 241);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    font-style: italic;
 }
 
 @media(max-width: 650px) {
