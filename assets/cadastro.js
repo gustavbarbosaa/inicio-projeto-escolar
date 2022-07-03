@@ -15,7 +15,7 @@ function abrirModal() {
 //botao cadastrar dentro do modal
 //array criado para guardar os objetos, que sao os alunos cadastrados
 const btnModal = document.getElementById('btn-modal')
-let alunosCadastrados = []
+const alunosCadastrados = []
 
 btnModal.addEventListener('click', cadastrarAluno)
 function cadastrarAluno() {
@@ -24,16 +24,19 @@ function cadastrarAluno() {
     const optionTurma = turmaAluno.options[turmaAluno.selectedIndex].text
     const situacaoAluno = document.getElementById('situacao-modal')
     const optionSituacao = situacaoAluno.options[situacaoAluno.selectedIndex].text
-    const aluno = document.createElement('label')
-
+    
     const objAluno = {
         nome: nomeAluno,
         turma: optionTurma,
         situacao: optionSituacao,
         id: alunosCadastrados.length + 1
     }
-
+    
+    const aluno = document.createElement('label')
     aluno.classList.add('alunosCadastrados')
+    alunosCadastrados.push(objAluno)
+    console.log(alunosCadastrados)
+    
     aluno.innerHTML = `
         <div>
             <p>${nomeAluno}</p>
@@ -46,12 +49,15 @@ function cadastrarAluno() {
         </div>
     `
     document.getElementById('cadastrados').appendChild(aluno)
-    alunosCadastrados.push(objAluno)
 
     modal.classList.remove('flex')
     modal.style.display = 'none'
+
+    limparCampos();    
+}
+
+function limparCampos() {
     document.getElementById('nome-modal').value = ''
     document.getElementById('turma-modal').value = '1ano'
     document.getElementById('situacao-modal').value = 'cursando'
-    console.log(alunosCadastrados)
 }
