@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="assets/cadastro.css">
+    <title>Sistema escolar - Cadastrar aluno</title>
+</head>
+<body>
+    <main>
+        <div class="cadastro-main">
+            <h1>Relação de alunos</h1>
+            <div class="cadastrar">
+                <label for="btn-cadastrar">Para cadastrar um novo aluno, clique no botão ao lado</label>
+                <button type="button" id="btn-cadastrar">Cadastrar</button>
+            </div>
+            <div class="modal">
+                <div class="container-nome">
+                    <label for="nome-modal">Nome completo</label><br>
+                    <input type="text" name="nome-modal" id="nome-modal">
+                </div>
+                <div class="container-turma">
+                    <label for="turma-modal">Selecione a turma</label>
+                    <select name="turma-modal" id="turma-modal">
+                        <option value="1-ano">1° ano</option>
+                        <option value="2-ano">2° ano</option>
+                        <option value="3-ano">3° ano</option>
+                        <option value="4-ano">4° ano</option>
+                        <option value="5-ano">5° ano</option>
+                    </select>
+                </div>
+                <div class="container-situacao">
+                    <label for="situacao-modal">Situação do aluno</label>
+                    <select name="situacao-modal" id="situacao-modal">
+                        <option value="cursando">Cursando</option>
+                        <option value="aprovado">Aprovado</option>
+                        <option value="reprovado">Reprovado</option>
+                    </select>
+                </div>
+                <button type="button" id="btn-modal">Cadastrar</button>
+            </div>
+            <div class="cadastrados">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><strong>Nome completo</strong></td>
+                            <td><strong>Turma</strong></td>
+                            <td><strong>Situação</strong></td>
+                        </tr>
+                        <tr>    
+                            <td>Gustavo Henrique Araújo Barbosa</td>
+                            <td>1° ano</td>
+                            <td>Aprovado</td>
+                            <td><button type="button" id="btn-editar">Editar</button></td>
+                        </tr>
+                        <!-- <tr>    
+                            <td>Gustavo Henrique Araújo Barbosa</td>
+                            <td>1° ano</td>
+                            <td>Aprovado</td>
+                            <td><button type="button" id="btn-editar">Editar</button></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <small>Desenvolvido por Gustavo Henrique</small>
+    </footer>
+    <script src="assets/cadastro.js"></script>
+</body>
+</html>
