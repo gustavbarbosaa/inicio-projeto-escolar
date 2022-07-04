@@ -6,11 +6,15 @@
     box-sizing: border-box;
     text-decoration: none;
     outline: none;
+    font-family: 'Roboto', serif;
+}
+
+h1 {
     font-family: 'Fraunces', serif;
 }
 
 body{
-    height: 95vh;
+    height: 100vh;
     width: 100vw;
 }
 
@@ -18,7 +22,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 1rem;
+    height: 10%;
     background: rgba(5, 52, 138, 0.35);
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 13.5px );
@@ -27,6 +31,7 @@ header{
 
 header h1{
     color: #3B8AEB;
+    font-size: 2rem;
 }
 
 header span{
@@ -65,13 +70,27 @@ header span{
 }
 
 main{
-    height:94.2%;
-    background-color: #2e6cb8ab;
+    height: 90%;
+    background-color: #cbdbf0ab;
+    display: flex;
+    overflow: hidden;
+}
+
+.imagem{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imagem img{
+    max-width: 42rem;
+    height: 40rem;
 }
 
 .principal{
     display: flex;
     justify-content: space-evenly;
+    width: 50%;
 }
 
 .card{
@@ -86,7 +105,7 @@ main{
     padding: 1rem;
     margin: 3rem;
     background: rgba(9, 103, 226, 0.35);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    box-shadow: 7px 7px 2px 0 rgba(0, 0, 0, 0.521);
     backdrop-filter: blur( 30px );
     -webkit-backdrop-filter: blur( 13.5px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
@@ -102,9 +121,6 @@ main{
 .card p{
     display: flex;
     align-items: center;
-    background-color: rgb(214, 214, 214);
-    height: 50%;
-    border-radius: 5px;
     font-weight: 600;
     font-family: Roboto, sans-serif;
 }
@@ -129,19 +145,30 @@ main{
     letter-spacing: 1px;
 }
 
-footer{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 0.5rem;
-}
-
 @media(max-width: 665px) {
-    .principal{
+    
+    main{
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .contatos{
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 3rem;
+    }
+
+    .contatos .links{
+        font-size: 13px;
+    }
+
+    .imagem{
+        display: none;
+    }
+
+    .principal{
+        height: 90%;
+        width: 100%;    
     }
 }

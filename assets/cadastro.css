@@ -1,70 +1,123 @@
-.cadastro-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 70%;
-    height: 40rem;
-    background-color: lightgray;
-    margin: auto;
-    position: relative;
-    border-radius: 21px 5px;
+.modal-open{
+    background-color: rgb(0, 0, 0);
 }
 
-.cadastro-main h1{
-    position: absolute;
-    top: 2%;
-}
-
-.cadastrar{
-    position: absolute;
-    top: 15%;
-    display: flex;
-    justify-content: space-evenly;
+main{
+    height: 90%;
     width: 100%;
 }
 
-#cadastrados{
-    position: absolute;
-    top: 25%;
-    width: 70%;
-    height: 70%;
-    background-color: rgb(227, 245, 239);
-    border-radius: 5px 21px;
-    padding: 2rem;
+.cards-cadastro{
+    width: 100%;
 }
 
-.cadastrados td{
-    padding: 2px 10px;
+.cadastrar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 2rem;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    background-color: rgb(3, 112, 202);
+}
+
+.cadastrar button{
+    width: 7rem;
+    height: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(5, 52, 138, 0.35);
+    transition: ease-in .3s;
+    cursor: pointer;
+}
+
+.cadastrar button:hover{
+    background-color: rgb(3, 59, 105);
+}
+
+#cadastrados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+#cadastrados table{
+    width: 100%;
+    margin: 1rem;
+    border-collapse: collapse;
+    border: 1px solid #ccc
+}
+
+#cadastrados table th{
+    background-color: rgba(5, 52, 138, 0.35);
+}
+
+#cadastrados table td{
+    padding: 0 5px;
+}
+
+.start{
+    text-align: start;
+}
+
+.center{
+    text-align: center;
+}
+
+#cadastrados table td img{
+    width: 20px;
+    margin: 0 3px;
+}
+
+#cadastrados table td button{
+    border: none;
+    background-color: transparent;
+}
+
+#cadastrados table td img:hover{
+    cursor: pointer;
 }
 
 .modal{
-    width: 38rem;
-    height: 25rem;
+    width: 48rem;
+    height: 40rem;
     position: absolute;
     top: 50%;
     left: 50%;
+    border-radius: 7px;
     transform: translate(-50%, -50%);
     background-color: rgb(102, 178, 240);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.473);
     display: none;
     z-index: 1;
+}
+
+.modal:hover{
+    cursor: crosshair;
 }
 
 .flex{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: 3rem;
+    justify-content: space-around;
+    padding: 1rem 3rem;
     text-align: center;
 }
 
-.container-nome{
+.container, .container-notas {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     color: rgb(0, 0, 0);
     gap: 5px;
 }
 
-.container-nome input{
+.container #nome-modal, #idade-modal, .notas{
     width: 20rem;
     height: 1.5rem; 
     background-color: rgb(179, 210, 235);
@@ -74,65 +127,40 @@
     color: rgb(54, 54, 54);
 }
 
+.media{
+    text-align: center;
+}
+
+.select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .modal select{
     background-color: rgb(179, 210, 235);
     border: none;
     border-radius: 5px;
     padding: 7px;
+    width: 50%;
     cursor: pointer;
 }
 
-#btn-modal{
-    background-color: rgb(179, 210, 235);
+.btn-modal{
+    margin-bottom: 0.5rem;
+}
+.btn-modal button{
     border: none;
     border-radius: 12px;
     width: 50%;
     height: 2rem;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%);
     cursor: pointer;
+    background-color: rgb(179, 210, 235);
 }
 
-.alunosCadastrados{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 14px;
-    font-style: italic;
-}
-
-.alunosCadastrados div{
-    display: flex;
-    align-items: center;
-}
-
-.alunosCadastrados div p{
-    margin: 10px;
-}
-
-.alunosCadastrados button{
-    width: 4rem;
-    height: 2rem;
-    margin: 2px;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(147, 199, 241);
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 12px;
-    font-style: italic;
-}
-
-@media(max-width: 650px) {
-
-    .cadastro-main{
-        width: 100%;
-        border-radius: 0;
+@media(max-width: 700px) {
+    .modal{
+        width: 90%;
     }
-
 }
