@@ -8,20 +8,29 @@
     <link rel="stylesheet" href="assets/cadastro.css">
     <title>Sistema escolar - Cadastrar aluno</title>
 </head>
-<body>
+<body id="body">
+    <header>
+        <h1>Relação de alunos</h1>
+    </header>
     <main>
-        <div class="cadastro-main">
-            <h1>Relação de alunos</h1>
+        <div class="cards-cadastro">
             <div class="cadastrar">
-                <label for="btn-cadastrar">Para cadastrar um novo aluno, clique no botão ao lado</label>
+                <label for="btn-cadastrar">Cadastrar novo aluno</label>
                 <button type="button" id="btn-cadastrar">Cadastrar</button>
             </div>
             <div class="modal">
-                <div class="container-nome">
+                <h2>Insira os dados do aluno</h2>
+                <div class="container">
                     <label for="nome-modal">Nome completo</label><br>
                     <input type="text" name="nome-modal" id="nome-modal">
                 </div>
-                <div class="container-turma">
+
+                <div class="container">
+                    <label for="idade-modal">Idade do aluno</label><br>
+                    <input type="number" name="idade-modal" id="idade-modal">
+                </div>
+
+                <div class="container select">
                     <label for="turma-modal">Selecione a turma</label>
                     <select name="turma-modal" id="turma-modal">
                         <option value="1ano">1° ano</option>
@@ -31,7 +40,27 @@
                         <option value="5ano">5° ano</option>
                     </select>
                 </div>
-                <div class="container-situacao">
+
+                <div class="container">
+                    <label for="nota1-modal">1° Nota</label><br>
+                    <input type="number" name="nota1-modal" id="nota1-modal" class="notas">
+                </div>
+
+                <div class="container">
+                    <label for="nota2-modal">2° Nota</label><br>
+                    <input type="number" name="nota2-modal" id="nota2-modal" class="notas">
+                </div>
+
+                <div class="container">
+                    <label for="nota3-modal">3° Nota</label><br>
+                    <input type="number" name="nota3-modal" id="nota3-modal" class="notas">
+                </div>
+
+                <div class="media">
+                    <label>Média</label>
+                </div>
+
+                <div class="container select">
                     <label for="situacao-modal">Situação do aluno</label>
                     <select name="situacao-modal" id="situacao-modal">
                         <option value="cursando">Cursando</option>
@@ -39,16 +68,27 @@
                         <option value="reprovado">Reprovado</option>
                     </select>
                 </div>
-                <button type="button" id="btn-modal">Cadastrar</button>
+                <div class="btn-modal">
+                    <button type="button" id="btn-cadastrar-modal" class="btn-modal">Cadastrar</button>
+                    <button type="button" id="btn-fechar-modal" class="btn-modal">Fechar</button>
+                </div>
             </div>
+
             <div id="cadastrados">
-                
+                <table border="1">
+                    <thead>
+                        <th class="start">Nome</th>
+                        <th class="center">Turma</th>
+                        <th class="center">Situação</th>
+                        <th class="center">Ações</th>
+                    </thead>
+                    <tbody id="cadastrados-tr">
+                    
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
-    <footer>
-        <small>Desenvolvido por Gustavo Henrique</small>
-    </footer>
-    <script src="assets/cadastro.js"></script>
+    <script type="module" src="assets/cadastro.mjs"></script>
 </body>
 </html>
