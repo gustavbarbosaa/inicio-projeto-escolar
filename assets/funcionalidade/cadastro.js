@@ -13,15 +13,22 @@ function abrirModal() {
         modal.setAttribute('class', 'modal flex');
     }
 }
+
+const btnFecharModal = document.getElementById('btn-fechar-modal');
+btnFecharModal.addEventListener('click', fecharModal);
+function fecharModal() {
+    body.classList.remove('modal-open');
+    estiloModal();
+    limparCampos();  
+}
 //botao cadastrar dentro do modal
 //array criado para guardar os objetos, que sao os alunos cadastrados
-const btnFecharModal = document.getElementById('btn-fechar-modal');
-const btnCadastrarModal = document.getElementById('btn-cadastrar-modal');
-const alunosCadastrados = []
 
-btnFecharModal.addEventListener('click', fecharModal);
+export const alunosCadastrados = []
+
+const btnCadastrarModal = document.getElementById('btn-cadastrar-modal');
 btnCadastrarModal.addEventListener('click', cadastrarAluno);
-function cadastrarAluno() {
+export function cadastrarAluno() {
     const nomeAluno = document.getElementById('nome-modal').value;
     const turmaAluno = document.getElementById('turma-modal');
     const optionTurma = turmaAluno.options[turmaAluno.selectedIndex].text;
@@ -44,11 +51,12 @@ function cadastrarAluno() {
         situacao: optionSituacao,
         id: alunosCadastrados.length + 1
     };
+
     alunosCadastrados.push(objAluno);
+    console.log(alunosCadastrados);
 
     //adicionar elemento na tela
     const aluno = document.createElement('tr');
-    console.log(alunosCadastrados);
     
     aluno.innerHTML = `
         <td class="start">${nomeAluno}</td>
@@ -60,16 +68,10 @@ function cadastrarAluno() {
         </td>
     `
     document.getElementById('cadastrados-tr').appendChild(aluno);
-    body.classList.remove('modal-open');
 
+    body.classList.remove('modal-open');
     estiloModal();
     limparCampos();    
-}
-
-function fecharModal() {
-    body.classList.remove('modal-open');
-    estiloModal();
-    limparCampos();  
 }
 
 function limparCampos() {
