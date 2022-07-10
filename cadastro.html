@@ -20,14 +20,15 @@
             </div>
             <div class="modal">
                 <h2>Insira os dados do aluno</h2>
-                <div class="container">
-                    <label for="nome-modal">Nome completo</label><br>
-                    <input type="text" name="nome-modal" id="nome-modal">
-                </div>
-
-                <div class="container">
-                    <label for="idade-modal">Idade do aluno</label><br>
-                    <input type="number" name="idade-modal" id="idade-modal">
+                <div class="nome-idade">
+                    <div class="container">
+                        <label for="nome-modal">Nome completo</label>
+                        <input type="text" name="nome-modal" id="nome-modal">
+                    </div>
+                    <div class="container">
+                        <label for="idade-modal">Idade do aluno</label>
+                        <input type="number" name="idade-modal" id="idade-modal">
+                    </div>
                 </div>
 
                 <div class="container select">
@@ -40,26 +41,6 @@
                         <option value="5ano">5° ano</option>
                     </select>
                 </div>
-
-                <div class="container">
-                    <label for="nota1-modal">1° Nota</label><br>
-                    <input type="number" name="nota1-modal" id="nota1-modal" class="notas">
-                </div>
-
-                <div class="container">
-                    <label for="nota2-modal">2° Nota</label><br>
-                    <input type="number" name="nota2-modal" id="nota2-modal" class="notas">
-                </div>
-
-                <div class="container">
-                    <label for="nota3-modal">3° Nota</label><br>
-                    <input type="number" name="nota3-modal" id="nota3-modal" class="notas">
-                </div>
-
-                <div class="media">
-                    <label>Média</label>
-                </div>
-
                 <div class="container select">
                     <label for="situacao-modal">Situação do aluno</label>
                     <select name="situacao-modal" id="situacao-modal">
@@ -80,9 +61,8 @@
                         <th class="start">Nome</th>
                         <th class="center">Turma</th>
                         <th class="center">Situação</th>
-                        <th class="center">Ações</th>
                     </thead>
-                    <tbody id="cadastrados-tr">
+                    <tbody class="scroll" id="cadastrados-tr">
                     
                     </tbody>
                 </table>

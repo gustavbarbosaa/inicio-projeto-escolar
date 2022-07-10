@@ -24,7 +24,7 @@ function fecharModal() {
 //botao cadastrar dentro do modal
 //array criado para guardar os objetos, que sao os alunos cadastrados
 
-export const alunosCadastrados = []
+export const alunosCadastrados = [];
 
 const btnCadastrarModal = document.getElementById('btn-cadastrar-modal');
 btnCadastrarModal.addEventListener('click', cadastrarAluno);
@@ -35,39 +35,30 @@ export function cadastrarAluno() {
     const situacaoAluno = document.getElementById('situacao-modal');
     const optionSituacao = situacaoAluno.options[situacaoAluno.selectedIndex].text;
     const idadeAluno = document.getElementById('idade-modal').value;
-    const nota1 = Number(document.getElementById('nota1-modal').value);
-    const nota2 = Number(document.getElementById('nota2-modal').value);
-    const nota3 = Number(document.getElementById('nota3-modal').value);
-    const media = (nota1 + nota2 + nota3) / 3;
+    // const nota1 = Number(document.getElementById('nota1-modal').value);
+    // const nota2 = Number(document.getElementById('nota2-modal').value);
+    // const nota3 = Number(document.getElementById('nota3-modal').value);
+    // const media = (nota1 + nota2 + nota3) / 3;
+
     
     const objAluno = {
-        nome: nomeAluno.toUpperCase(),
+        nome: nomeAluno,
         idade: Number(idadeAluno),
         turma: optionTurma,
-        nota1: Number(nota1),
-        nota2: Number(nota2),
-        nota3: Number(nota3),
-        media: Number(media.toFixed(2)),
+        // nota1: Number(nota1),
+        // nota2: Number(nota2),
+        // nota3: Number(nota3),
+        // media: Number(media.toFixed(2)),
         situacao: optionSituacao,
         id: alunosCadastrados.length + 1
     };
 
+    
     alunosCadastrados.push(objAluno);
     console.log(alunosCadastrados);
-
-    //adicionar elemento na tela
-    const aluno = document.createElement('tr');
     
-    aluno.innerHTML = `
-        <td class="start">${nomeAluno}</td>
-        <td class="center">${optionTurma}</td>
-        <td class="center">${optionSituacao}</td>
-        <td class="center">
-            <button class="editar-aluno" id="btn-edt"><img src="assets/images/editar.png" alt="editar aluno"></button>
-            <button class="deletar-aluno" id="btn-del"><img src="assets/images/botao-de-deletar.png" alt="deletar aluno"></button>
-        </td>
-    `
-    document.getElementById('cadastrados-tr').appendChild(aluno);
+    //adicionar elemento na tela
+    mostrarNaTela(nomeAluno, optionTurma, optionSituacao);
 
     body.classList.remove('modal-open');
     estiloModal();
@@ -76,6 +67,7 @@ export function cadastrarAluno() {
 
 function limparCampos() {
     document.getElementById('nome-modal').value = '';
+    document.getElementById('idade-modal').value = '';
     document.getElementById('turma-modal').value = '1ano';
     document.getElementById('situacao-modal').value = 'cursando';
 }
@@ -83,4 +75,26 @@ function limparCampos() {
 function estiloModal() {
     modal.classList.remove('flex');
     modal.style.display = 'none';
+}
+
+function mostrarNaTela(nome, turma, situacao) {
+    const tbody = document.getElementById('cadastrados-tr');
+    tbody.innerText = '';
+
+    for(let i = 0; i < alunosCadastrados.length; i++) {
+        let tr = tbody.insertRow();
+
+        let td_nome = tr.insertCell();
+        let td_turma = tr.insertCell();
+        let td_situacao = tr.insertCell();
+
+        td_nome.innerText = alunosCadastrados[i].nome;
+
+        td_turma.innerText = alunosCadastrados[i].turma;
+        td_turma.classList.add('center');
+
+        td_situacao.innerText = alunosCadastrados[i].situacao;
+        td_situacao.classList.add('center');
+    }
+
 }
