@@ -4,10 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/estilo/edicao-aluno.css">
+    <link rel="stylesheet" href="/assets/estilo/cadastro.css">
     <title>Sistema escolar - Editar aluno</title>
 </head>
 <body>
-    
+    <main>
+        <div class="edicao-aluno">
+            <h2>Editar dados e inserir notas</h2>
+            <div class="nome-idade">
+                <div class="container">
+                    <label for="nome-edit">Nome completo</label>
+                    <input type="text" name="nome-modal" id="nome-edit">
+                </div>
+                <div class="container">
+                    <label for="idade-edit">Idade do aluno</label>
+                    <input type="number" name="idade-modal" id="idade-edit">
+                </div>
+            </div>
+            <div class="notas">
+                <div class="container individ-notas">
+                    <label for="nota1">Primeira nota</label>
+                    <input type="number" name="nota1" id="nota1">
+                </div>
+                <div class="container individ-notas">
+                    <label for="nota2">Segunda nota</label>
+                    <input type="number" name="nota2" id="nota2">
+                </div>
+                <div class="container individ-notas">
+                    <label for="nota3">Terceira nota</label>
+                    <input type="number" name="nota3" id="nota3">
+                </div>
+            </div>
+            <div class="container select">
+                <label for="turma-modal">Selecione a turma</label>
+                <select name="turma-modal" id="turma-edit">
+                    <option value="1ano">1° ano</option>
+                    <option value="2ano">2° ano</option>
+                    <option value="3ano">3° ano</option>
+                    <option value="4ano">4° ano</option>
+                    <option value="5ano">5° ano</option>
+                </select>
+            </div>
+            <div class="container select">
+                <label for="situacao-modal">Situação do aluno</label>
+                <select name="situacao-modal" id="situacao-edit">
+                    <option value="cursando">Cursando</option>
+                    <option value="aprovado">Aprovado</option>
+                    <option value="reprovado">Reprovado</option>
+                </select>
+            </div>
+            <div class="buttons-edit">
+                <button type="button" id="button-editar-aluno">
+                    Editar
+                </button>
+                <button type="button" id="button-excluir-aluno">
+                    Excluir aluno
+                </button>
+                <button tpye="button" id="button-cancelar-editar">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </main>
     <script type='module' src="assets/funcionalidade/editarAluno.js"></script>
 </body>
 </html>

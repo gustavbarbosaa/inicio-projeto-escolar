@@ -1,0 +1,70 @@
+*{
+    outline: none;
+}
+
+.edicao-aluno{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 52rem;
+    height: 40rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 7px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(102, 178, 240);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.473);
+    /* display: none;
+    z-index: 1; */
+    font-weight: bold;
+}
+
+.individ-notas input{
+    width: 12rem !important;
+}
+
+.notas{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+select{
+    background-color: rgb(179, 210, 235);
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.buttons-edit{
+    width: 50%;
+    display: flex;
+}
+
+button{
+    border: none;
+    border-radius: 12px;
+    width: 70%;
+    height: 2.5rem;
+    margin: 3px;
+    cursor: pointer;
+    background-color: rgb(179, 210, 235);
+}
+
+@media (max-width: 745px) {
+
+    .edicao-aluno{
+        width: 100vw;
+        height: 100vh;
+    }
+    .notas{
+        flex-direction: column;
+    }
+}

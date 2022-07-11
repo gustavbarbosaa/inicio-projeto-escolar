@@ -83,6 +83,7 @@ function mostrarNaTela(nome, turma, situacao) {
 
     for(let i = 0; i < alunosCadastrados.length; i++) {
         let tr = tbody.insertRow();
+        tr.setAttribute('id', 'idAluno')
 
         let td_nome = tr.insertCell();
         let td_turma = tr.insertCell();
@@ -96,5 +97,4 @@ function mostrarNaTela(nome, turma, situacao) {
         td_situacao.innerText = alunosCadastrados[i].situacao;
         td_situacao.classList.add('center');
     }
-
 }
