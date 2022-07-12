@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/estilo/style.css">
+    <link rel="stylesheet" href="assets/estilo/style.css">
     <link rel="stylesheet" href="assets/estilo/cadastro.css">
+    <link rel="stylesheet" href="assets/estilo/edicao-aluno.css">
     <title>Sistema escolar - Cadastrar aluno</title>
 </head>
 <body id="body">
@@ -18,6 +19,7 @@
                 <label for="btn-cadastrar">Cadastrar novo aluno</label>
                 <button type="button" id="btn-cadastrar">Cadastrar</button>
             </div>
+            
             <div class="modal">
                 <h2>Insira os dados do aluno</h2>
                 <div class="nome-idade">
@@ -52,6 +54,63 @@
                 <div class="btn-modal">
                     <button type="button" id="btn-cadastrar-modal" class="btn-modal">Cadastrar</button>
                     <button type="button" id="btn-fechar-modal" class="btn-modal">Fechar</button>
+                </div>
+            </div>
+
+            <div class="edicao-aluno">
+                <h2>Editar dados e inserir notas</h2>
+                <div class="nome-idade">
+                    <div class="container">
+                        <label for="nome-edit">Nome completo</label>
+                        <input type="text" name="nome-modal" id="nome-modal">
+                    </div>
+                    <div class="container">
+                        <label for="idade-modal">Idade do aluno</label>
+                        <input type="number" name="idade-modal" id="idade-modal">
+                    </div>
+                </div>
+                <div class="notas">
+                    <div class="container individ-notas">
+                        <label for="nota1">Primeira nota</label>
+                        <input type="number" name="nota1" id="nota1">
+                    </div>
+                    <div class="container individ-notas">
+                        <label for="nota2">Segunda nota</label>
+                        <input type="number" name="nota2" id="nota2">
+                    </div>
+                    <div class="container individ-notas">
+                        <label for="nota3">Terceira nota</label>
+                        <input type="number" name="nota3" id="nota3">
+                    </div>
+                </div>
+                <div class="container select">
+                    <label for="turma-modal">Selecione a turma</label>
+                    <select name="turma-modal" id="turma-modal">
+                        <option value="1ano">1° ano</option>
+                        <option value="2ano">2° ano</option>
+                        <option value="3ano">3° ano</option>
+                        <option value="4ano">4° ano</option>
+                        <option value="5ano">5° ano</option>
+                    </select>
+                </div>
+                <div class="container select">
+                    <label for="situacao-modal">Situação do aluno</label>
+                    <select name="situacao-modal" id="situacao-modal">
+                        <option value="cursando">Cursando</option>
+                        <option value="aprovado">Aprovado</option>
+                        <option value="reprovado">Reprovado</option>
+                    </select>
+                </div>
+                <div class="buttons-edit">
+                    <button type="button" id="button-editar-aluno">
+                        Editar
+                    </button>
+                    <button type="button" id="button-excluir-aluno">
+                        Excluir aluno
+                    </button>
+                    <button tpye="button" id="button-cancelar-editar">
+                        Cancelar
+                    </button>
                 </div>
             </div>
 

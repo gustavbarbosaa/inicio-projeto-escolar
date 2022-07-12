@@ -106,6 +106,7 @@ main{
 }
 
 .modal{
+    display: none;
     width: 52rem;
     height: 40rem;
     position: absolute;
@@ -115,7 +116,6 @@ main{
     transform: translate(-50%, -50%);
     background-color: rgb(102, 178, 240);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.473);
-    display: none;
     z-index: 1;
     font-weight: bold;
 }
