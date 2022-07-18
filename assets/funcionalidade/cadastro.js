@@ -25,6 +25,17 @@ function fecharModal() {
 }
 
 const alunosCadastrados = [];
+let objAluno = {
+    nome: undefined,
+    idade: undefined,
+    turma: undefined,
+    nota1: undefined,
+    nota2: undefined,
+    nota3: undefined,
+    media: undefined,
+    situacao: undefined,
+    id: alunosCadastrados.length + 1
+};
 
 const btnCadastrarModal = document.getElementById('btn-cadastrar-modal');
 btnCadastrarModal.addEventListener('click', cadastrarAluno);
@@ -35,19 +46,19 @@ function cadastrarAluno() {
     const situacaoAluno = document.getElementById('situacao-modal');
     const optionSituacao = situacaoAluno.options[situacaoAluno.selectedIndex].text;
     const idadeAluno = document.getElementById('idade-modal').value;
-    // const nota1 = Number(document.getElementById('nota1-modal').value);
-    // const nota2 = Number(document.getElementById('nota2-modal').value);
-    // const nota3 = Number(document.getElementById('nota3-modal').value);
-    // const media = (nota1 + nota2 + nota3) / 3;
+    const nota1 = undefined;
+    const nota2 = undefined;
+    const nota3 = undefined;
+    const media = undefined;
     
-    const objAluno = {
+    objAluno = {
         nome: nomeAluno,
         idade: Number(idadeAluno),
         turma: optionTurma,
-        // nota1: Number(nota1),
-        // nota2: Number(nota2),
-        // nota3: Number(nota3),
-        // media: Number(media.toFixed(2)),
+        nota1: Number(nota1),
+        nota2: Number(nota2),
+        nota3: Number(nota3),
+        media: Number(media),
         situacao: optionSituacao,
         id: alunosCadastrados.length + 1
     };
@@ -60,7 +71,6 @@ function cadastrarAluno() {
     body.classList.remove('modal-open');
     estiloModal();
     limparCampos();
-    abrirModalEdit();
     cancelarEdit();
     
 }
@@ -82,6 +92,7 @@ function estiloModal() {
 
 function mostrarNaTela(nome, turma, situacao) {
     const tbody = document.getElementById('cadastrados-tr');
+    const turmaEdit = document.getElementById('turma-edit');
     tbody.innerText = '';
 
     for(let i = 0; i < alunosCadastrados.length; i++) {
@@ -99,12 +110,8 @@ function mostrarNaTela(nome, turma, situacao) {
 
         td_situacao.innerText = alunosCadastrados[i].situacao;
         td_situacao.classList.add('center');
-    }
-}
 
-function abrirModalEdit() {
-    const aluno_tr = document.getElementById('idAluno');
-    aluno_tr.addEventListener('click', () => {
+        tr.addEventListener('click', () => {
         editAluno.style.display = 'flex';
         body.classList.add('modal-open');
 
@@ -112,8 +119,12 @@ function abrirModalEdit() {
             editAluno.removeAttribute('class');
         } else{
             editAluno.setAttribute('class', 'edicao-aluno ativo');
+            document.getElementById('nome-edit').value = alunosCadastrados[i].nome;
+            document.getElementById('idade-edit').value = alunosCadastrados[i].idade;
+            turmaEdit.options[turmaEdit.selectedIndex].text = alunosCadastrados[i].turma;
         }
-    })
+        })
+    }
 }
 
 function cancelarEdit() {
@@ -126,3 +137,4 @@ function cancelarEdit() {
         body.classList.remove('modal-open');
     })
 }
+
